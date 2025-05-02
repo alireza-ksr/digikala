@@ -1,0 +1,719 @@
+{
+	"info": {
+		"_postman_id": "74eb0ec8-fe1a-4e8b-9e41-41a32ee59619",
+		"name": "Digikala",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13924255",
+		"_collection_link": "https://www.postman.com/gold-escape-737985/alireza-kasiri/collection/jorgni5/new-collection?action=share&source=collection_link&creator=13924255"
+	},
+	"item": [
+		{
+			"name": "Positive Tests",
+			"item": [
+				{
+					"name": "Successful Login Test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body should contain status 200\", function () {\r",
+									"    pm.response.to.have.jsonBody('status', 200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"status should be of type number\", function () {\r",
+									"    pm.expect(pm.response.json().status).to.be.a('number');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body should contain status field\", function () {\r",
+									"    pm.response.to.have.jsonBody('status');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time should be less than 2000ms\", function () {\r",
+									"    pm.response.to.have.responseTime.lessThan(2000);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en,fa;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://www.digikala.com"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://www.digikala.com/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A/Brand\";v=\"99\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-web-client",
+								"value": "desktop"
+							},
+							{
+								"key": "x-web-optimize-response",
+								"value": "1"
+							},
+							{
+								"key": "Cookie",
+								"value": "ab_test_experiments=%5B%22229ea1a233356b114984cf9fa2ecd3ff%22%2C%22db7b11075496e04f0a6ef0d3a02d5264%22%2C%224905b18f64695e6dbfd739d20a4ae2c0%22%2C%22f0fd80107233fa604679779d7e121710%22%2C%2237136fdc21e0b782211ccac8c2d7be63%22%5D; tracker_glob_new=8bOT0xT; TS01b6ea4d=0102310591b7d4ed63f1acd75f8588e18a9dfea48e03363acc34da2fbb748fcd30f01dcea9bc4e4deda3fbce5ad444e41f7739fd4277606a8ec468f424d19aa27cc547768ab0b4a801f21e2c3ffc44f89e3d173045c1f81b92ece38f023fe4bf7f2646c341d6b22210bb922d44ce221fb7ad7f91d1; TS011434b1=010231059126488f5b2f431971401bc4a17cf26aebee2c5b1c420c96cc797a9240cca237425b0b4c1e2d9dfe6e0423cecc7193b01d625c486831d691e4f4380de0ca7f1d3ddfa848de95e9f66b97cfcc6f25e8e606ff304aa8c29562b6f8052497828342d2c3dba1cfc841b68c9f02b0e977f160b8d3ba132779020749babd07d453464e622c6103f3e7640a66e6d1c3140a039022db3614cfd7ff8a40401a7ffdb7f511d0; TS01d07deb=01023105913e8e4ceef676b57026510347afb05914f43aa80348881ccac1cf04638ded358a7b30872a703411213b6a915d9f6b74874a6c3cff59ff3f3cdaeaae3ffd38340c45fb8f4e9756855a0a5c2a5e37af58f1; Digikala:General:Location=MTJ1R0dYZzJRMk1tdUJ3L2FnVVhlQT09%26YnNESDZEYUVHM25UekpndDJzQjdESUlDZ21hMmdsTUtnaEFxb1hJUFdkcUlGRFczS0crdThpSTF4YStad09OM2FLVzFoZ1RVZ3ZSV01Oa2NFYTF0WWc9PQ~~; PHPSESSID=95k51m1qo3omq2bs6jdj8jqdnv; tracker_session=2uMd2AI; TS01c77ebf=0102310591fc8c719bd280ffd5400b21cf26c5b0f37ab717e5ffd9eafda66fcae55818d7afaef4bbb60b905d20adbe0624a300cdce393cebf6261821663367a70fea0a233f3e312969f1699279ef38214d36039576dfab1734ac929d0a52832d5464352808846ac00387d18d2dfaba66c0fa6f0ba7b3a813bfd070cdc74beab721510361839c740371a033d5f7a2f888adcbe35aa17dcd6237639b13303e1d8d3016caa58d7a91cb884e0f7e0dfd3dd62a1596f4eca79cedf09bb0436d67e9d1b65c1c7a36cac4867a8f65ddfc2d6a6a382569b68e; _sp_ses.13cb=*; TS010e7d7f=0102310591e602c2e4555399a6a861300a70336ba19539f0b4ce1d0aba8f74296f975ed3a995059884debc1016402b29a25b5b65810bb9626ec9c4348ce5bfc37321cc400ee63fcd46f4ea3a1b18ca7b8fea0ce4510038e3434205ea0c46f704a4ce80a6e467d55ab507864006f0c4af8786348cdabdd2564e22f8732c671baa1412adc0adfedf16cfed8e5cad04e8a08aa8bcee3e6dc24e3b56227eaf486faaf4b8e60d46; _sp_id.13cb=8c6cbf06-dbf0-4fbd-93da-3d6958b9abb6.1746167668.5.1746188810.1746184520.9f16a218-c1ba-4bb5-9668-92c3c04cfe38.bb6f8301-294a-47dd-b16a-da3e369bba83.6282448a-e4bc-44a0-bfa9-8ad47493ed4b.1746186542736.26"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backUrl\": \"/\",\r\n    \"type\": \"password\",\r\n    \"username\": \"09128130622\",\r\n    \"password\": \"@Alireza0014621827\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/user/login/password/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"login",
+								"password",
+								""
+							]
+						},
+						"description": "Generated from cURL: curl 'https://api.digikala.com/v1/user/login/password/' \\\r\n  -H 'accept: application/json, text/plain, */*' \\\r\n  -H 'accept-language: en,fa;q=0.9' \\\r\n  -H 'cache-control: no-cache' \\\r\n  -H 'content-type: application/json' \\\r\n  -b 'ab_test_experiments=%5B%22229ea1a233356b114984cf9fa2ecd3ff%22%2C%22db7b11075496e04f0a6ef0d3a02d5264%22%2C%224905b18f64695e6dbfd739d20a4ae2c0%22%2C%22f0fd80107233fa604679779d7e121710%22%2C%2237136fdc21e0b782211ccac8c2d7be63%22%5D; tracker_glob_new=8bOT0xT; TS01b6ea4d=0102310591b7d4ed63f1acd75f8588e18a9dfea48e03363acc34da2fbb748fcd30f01dcea9bc4e4deda3fbce5ad444e41f7739fd4277606a8ec468f424d19aa27cc547768ab0b4a801f21e2c3ffc44f89e3d173045c1f81b92ece38f023fe4bf7f2646c341d6b22210bb922d44ce221fb7ad7f91d1; TS011434b1=010231059126488f5b2f431971401bc4a17cf26aebee2c5b1c420c96cc797a9240cca237425b0b4c1e2d9dfe6e0423cecc7193b01d625c486831d691e4f4380de0ca7f1d3ddfa848de95e9f66b97cfcc6f25e8e606ff304aa8c29562b6f8052497828342d2c3dba1cfc841b68c9f02b0e977f160b8d3ba132779020749babd07d453464e622c6103f3e7640a66e6d1c3140a039022db3614cfd7ff8a40401a7ffdb7f511d0; TS01d07deb=01023105913e8e4ceef676b57026510347afb05914f43aa80348881ccac1cf04638ded358a7b30872a703411213b6a915d9f6b74874a6c3cff59ff3f3cdaeaae3ffd38340c45fb8f4e9756855a0a5c2a5e37af58f1; Digikala:General:Location=MTJ1R0dYZzJRMk1tdUJ3L2FnVVhlQT09%26YnNESDZEYUVHM25UekpndDJzQjdESUlDZ21hMmdsTUtnaEFxb1hJUFdkcUlGRFczS0crdThpSTF4YStad09OM2FLVzFoZ1RVZ3ZSV01Oa2NFYTF0WWc9PQ~~; PHPSESSID=95k51m1qo3omq2bs6jdj8jqdnv; tracker_session=2uMd2AI; TS01c77ebf=0102310591fc8c719bd280ffd5400b21cf26c5b0f37ab717e5ffd9eafda66fcae55818d7afaef4bbb60b905d20adbe0624a300cdce393cebf6261821663367a70fea0a233f3e312969f1699279ef38214d36039576dfab1734ac929d0a52832d5464352808846ac00387d18d2dfaba66c0fa6f0ba7b3a813bfd070cdc74beab721510361839c740371a033d5f7a2f888adcbe35aa17dcd6237639b13303e1d8d3016caa58d7a91cb884e0f7e0dfd3dd62a1596f4eca79cedf09bb0436d67e9d1b65c1c7a36cac4867a8f65ddfc2d6a6a382569b68e; _sp_ses.13cb=*; TS010e7d7f=0102310591e602c2e4555399a6a861300a70336ba19539f0b4ce1d0aba8f74296f975ed3a995059884debc1016402b29a25b5b65810bb9626ec9c4348ce5bfc37321cc400ee63fcd46f4ea3a1b18ca7b8fea0ce4510038e3434205ea0c46f704a4ce80a6e467d55ab507864006f0c4af8786348cdabdd2564e22f8732c671baa1412adc0adfedf16cfed8e5cad04e8a08aa8bcee3e6dc24e3b56227eaf486faaf4b8e60d46; _sp_id.13cb=8c6cbf06-dbf0-4fbd-93da-3d6958b9abb6.1746167668.5.1746188810.1746184520.9f16a218-c1ba-4bb5-9668-92c3c04cfe38.bb6f8301-294a-47dd-b16a-da3e369bba83.6282448a-e4bc-44a0-bfa9-8ad47493ed4b.1746186542736.26' \\\r\n  -H 'origin: https://www.digikala.com' \\\r\n  -H 'pragma: no-cache' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://www.digikala.com/' \\\r\n  -H 'sec-ch-ua: \"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A/Brand\";v=\"99\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-site' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36' \\\r\n  -H 'x-web-client: desktop' \\\r\n  -H 'x-web-optimize-response: 1' \\\r\n  --data-raw '{\"backUrl\":\"/\",\"type\":\"password\",\"username\":\"09128130622\",\"password\":\"@Alireza0014621827\"}'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Negative Tests",
+			"item": [
+				{
+					"name": "Invalid Password Test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body should contain status 400\", function () {\r",
+									"    pm.response.to.have.jsonBody('status', 400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body should contain message \", function () {\r",
+									"    pm.response.to.have.jsonBody('message', \"اطلاعات کاربری نادرست است\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"status should be of type number\", function () {\r",
+									"    pm.expect(pm.response.json().status).to.be.a('number');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body should contain status field\", function () {\r",
+									"    pm.response.to.have.jsonBody('status');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time should be less than 2000ms\", function () {\r",
+									"    pm.response.to.have.responseTime.lessThan(2000);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en,fa;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://www.digikala.com"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://www.digikala.com/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A/Brand\";v=\"99\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-web-client",
+								"value": "desktop"
+							},
+							{
+								"key": "x-web-optimize-response",
+								"value": "1"
+							},
+							{
+								"key": "Cookie",
+								"value": "ab_test_experiments=%5B%22229ea1a233356b114984cf9fa2ecd3ff%22%2C%22db7b11075496e04f0a6ef0d3a02d5264%22%2C%224905b18f64695e6dbfd739d20a4ae2c0%22%2C%22f0fd80107233fa604679779d7e121710%22%2C%2237136fdc21e0b782211ccac8c2d7be63%22%5D; tracker_glob_new=8bOT0xT; TS01b6ea4d=0102310591b7d4ed63f1acd75f8588e18a9dfea48e03363acc34da2fbb748fcd30f01dcea9bc4e4deda3fbce5ad444e41f7739fd4277606a8ec468f424d19aa27cc547768ab0b4a801f21e2c3ffc44f89e3d173045c1f81b92ece38f023fe4bf7f2646c341d6b22210bb922d44ce221fb7ad7f91d1; TS011434b1=010231059126488f5b2f431971401bc4a17cf26aebee2c5b1c420c96cc797a9240cca237425b0b4c1e2d9dfe6e0423cecc7193b01d625c486831d691e4f4380de0ca7f1d3ddfa848de95e9f66b97cfcc6f25e8e606ff304aa8c29562b6f8052497828342d2c3dba1cfc841b68c9f02b0e977f160b8d3ba132779020749babd07d453464e622c6103f3e7640a66e6d1c3140a039022db3614cfd7ff8a40401a7ffdb7f511d0; TS01d07deb=01023105913e8e4ceef676b57026510347afb05914f43aa80348881ccac1cf04638ded358a7b30872a703411213b6a915d9f6b74874a6c3cff59ff3f3cdaeaae3ffd38340c45fb8f4e9756855a0a5c2a5e37af58f1; Digikala:General:Location=MTJ1R0dYZzJRMk1tdUJ3L2FnVVhlQT09%26YnNESDZEYUVHM25UekpndDJzQjdESUlDZ21hMmdsTUtnaEFxb1hJUFdkcUlGRFczS0crdThpSTF4YStad09OM2FLVzFoZ1RVZ3ZSV01Oa2NFYTF0WWc9PQ~~; PHPSESSID=95k51m1qo3omq2bs6jdj8jqdnv; tracker_session=2uMd2AI; TS01c77ebf=0102310591fc8c719bd280ffd5400b21cf26c5b0f37ab717e5ffd9eafda66fcae55818d7afaef4bbb60b905d20adbe0624a300cdce393cebf6261821663367a70fea0a233f3e312969f1699279ef38214d36039576dfab1734ac929d0a52832d5464352808846ac00387d18d2dfaba66c0fa6f0ba7b3a813bfd070cdc74beab721510361839c740371a033d5f7a2f888adcbe35aa17dcd6237639b13303e1d8d3016caa58d7a91cb884e0f7e0dfd3dd62a1596f4eca79cedf09bb0436d67e9d1b65c1c7a36cac4867a8f65ddfc2d6a6a382569b68e; _sp_ses.13cb=*; TS010e7d7f=0102310591e602c2e4555399a6a861300a70336ba19539f0b4ce1d0aba8f74296f975ed3a995059884debc1016402b29a25b5b65810bb9626ec9c4348ce5bfc37321cc400ee63fcd46f4ea3a1b18ca7b8fea0ce4510038e3434205ea0c46f704a4ce80a6e467d55ab507864006f0c4af8786348cdabdd2564e22f8732c671baa1412adc0adfedf16cfed8e5cad04e8a08aa8bcee3e6dc24e3b56227eaf486faaf4b8e60d46; _sp_id.13cb=8c6cbf06-dbf0-4fbd-93da-3d6958b9abb6.1746167668.5.1746188810.1746184520.9f16a218-c1ba-4bb5-9668-92c3c04cfe38.bb6f8301-294a-47dd-b16a-da3e369bba83.6282448a-e4bc-44a0-bfa9-8ad47493ed4b.1746186542736.26"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backUrl\": \"/\",\r\n    \"type\": \"password\",\r\n    \"username\": \"09128130622\",\r\n    \"password\": \"invalid\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/user/login/password/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"login",
+								"password",
+								""
+							]
+						},
+						"description": "Generated from cURL: curl 'https://api.digikala.com/v1/user/login/password/' \\\r\n  -H 'accept: application/json, text/plain, */*' \\\r\n  -H 'accept-language: en,fa;q=0.9' \\\r\n  -H 'cache-control: no-cache' \\\r\n  -H 'content-type: application/json' \\\r\n  -b 'ab_test_experiments=%5B%22229ea1a233356b114984cf9fa2ecd3ff%22%2C%22db7b11075496e04f0a6ef0d3a02d5264%22%2C%224905b18f64695e6dbfd739d20a4ae2c0%22%2C%22f0fd80107233fa604679779d7e121710%22%2C%2237136fdc21e0b782211ccac8c2d7be63%22%5D; tracker_glob_new=8bOT0xT; TS01b6ea4d=0102310591b7d4ed63f1acd75f8588e18a9dfea48e03363acc34da2fbb748fcd30f01dcea9bc4e4deda3fbce5ad444e41f7739fd4277606a8ec468f424d19aa27cc547768ab0b4a801f21e2c3ffc44f89e3d173045c1f81b92ece38f023fe4bf7f2646c341d6b22210bb922d44ce221fb7ad7f91d1; TS011434b1=010231059126488f5b2f431971401bc4a17cf26aebee2c5b1c420c96cc797a9240cca237425b0b4c1e2d9dfe6e0423cecc7193b01d625c486831d691e4f4380de0ca7f1d3ddfa848de95e9f66b97cfcc6f25e8e606ff304aa8c29562b6f8052497828342d2c3dba1cfc841b68c9f02b0e977f160b8d3ba132779020749babd07d453464e622c6103f3e7640a66e6d1c3140a039022db3614cfd7ff8a40401a7ffdb7f511d0; TS01d07deb=01023105913e8e4ceef676b57026510347afb05914f43aa80348881ccac1cf04638ded358a7b30872a703411213b6a915d9f6b74874a6c3cff59ff3f3cdaeaae3ffd38340c45fb8f4e9756855a0a5c2a5e37af58f1; Digikala:General:Location=MTJ1R0dYZzJRMk1tdUJ3L2FnVVhlQT09%26YnNESDZEYUVHM25UekpndDJzQjdESUlDZ21hMmdsTUtnaEFxb1hJUFdkcUlGRFczS0crdThpSTF4YStad09OM2FLVzFoZ1RVZ3ZSV01Oa2NFYTF0WWc9PQ~~; PHPSESSID=95k51m1qo3omq2bs6jdj8jqdnv; tracker_session=2uMd2AI; TS01c77ebf=0102310591fc8c719bd280ffd5400b21cf26c5b0f37ab717e5ffd9eafda66fcae55818d7afaef4bbb60b905d20adbe0624a300cdce393cebf6261821663367a70fea0a233f3e312969f1699279ef38214d36039576dfab1734ac929d0a52832d5464352808846ac00387d18d2dfaba66c0fa6f0ba7b3a813bfd070cdc74beab721510361839c740371a033d5f7a2f888adcbe35aa17dcd6237639b13303e1d8d3016caa58d7a91cb884e0f7e0dfd3dd62a1596f4eca79cedf09bb0436d67e9d1b65c1c7a36cac4867a8f65ddfc2d6a6a382569b68e; _sp_ses.13cb=*; TS010e7d7f=0102310591e602c2e4555399a6a861300a70336ba19539f0b4ce1d0aba8f74296f975ed3a995059884debc1016402b29a25b5b65810bb9626ec9c4348ce5bfc37321cc400ee63fcd46f4ea3a1b18ca7b8fea0ce4510038e3434205ea0c46f704a4ce80a6e467d55ab507864006f0c4af8786348cdabdd2564e22f8732c671baa1412adc0adfedf16cfed8e5cad04e8a08aa8bcee3e6dc24e3b56227eaf486faaf4b8e60d46; _sp_id.13cb=8c6cbf06-dbf0-4fbd-93da-3d6958b9abb6.1746167668.5.1746188810.1746184520.9f16a218-c1ba-4bb5-9668-92c3c04cfe38.bb6f8301-294a-47dd-b16a-da3e369bba83.6282448a-e4bc-44a0-bfa9-8ad47493ed4b.1746186542736.26' \\\r\n  -H 'origin: https://www.digikala.com' \\\r\n  -H 'pragma: no-cache' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://www.digikala.com/' \\\r\n  -H 'sec-ch-ua: \"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A/Brand\";v=\"99\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-site' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36' \\\r\n  -H 'x-web-client: desktop' \\\r\n  -H 'x-web-optimize-response: 1' \\\r\n  --data-raw '{\"backUrl\":\"/\",\"type\":\"password\",\"username\":\"09128130622\",\"password\":\"@Alireza0014621827\"}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid Username Test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body should contain status 400\", function () {\r",
+									"    pm.response.to.have.jsonBody('status', 400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body should contain message \", function () {\r",
+									"    pm.response.to.have.jsonBody('message', \"شماره موبایل یا ایمیل نادرست است\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"status should be of type number\", function () {\r",
+									"    pm.expect(pm.response.json().status).to.be.a('number');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body should contain status field\", function () {\r",
+									"    pm.response.to.have.jsonBody('status');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time should be less than 2000ms\", function () {\r",
+									"    pm.response.to.have.responseTime.lessThan(2000);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en,fa;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://www.digikala.com"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://www.digikala.com/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A/Brand\";v=\"99\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-web-client",
+								"value": "desktop"
+							},
+							{
+								"key": "x-web-optimize-response",
+								"value": "1"
+							},
+							{
+								"key": "Cookie",
+								"value": "ab_test_experiments=%5B%22229ea1a233356b114984cf9fa2ecd3ff%22%2C%22db7b11075496e04f0a6ef0d3a02d5264%22%2C%224905b18f64695e6dbfd739d20a4ae2c0%22%2C%22f0fd80107233fa604679779d7e121710%22%2C%2237136fdc21e0b782211ccac8c2d7be63%22%5D; tracker_glob_new=8bOT0xT; TS01b6ea4d=0102310591b7d4ed63f1acd75f8588e18a9dfea48e03363acc34da2fbb748fcd30f01dcea9bc4e4deda3fbce5ad444e41f7739fd4277606a8ec468f424d19aa27cc547768ab0b4a801f21e2c3ffc44f89e3d173045c1f81b92ece38f023fe4bf7f2646c341d6b22210bb922d44ce221fb7ad7f91d1; TS011434b1=010231059126488f5b2f431971401bc4a17cf26aebee2c5b1c420c96cc797a9240cca237425b0b4c1e2d9dfe6e0423cecc7193b01d625c486831d691e4f4380de0ca7f1d3ddfa848de95e9f66b97cfcc6f25e8e606ff304aa8c29562b6f8052497828342d2c3dba1cfc841b68c9f02b0e977f160b8d3ba132779020749babd07d453464e622c6103f3e7640a66e6d1c3140a039022db3614cfd7ff8a40401a7ffdb7f511d0; TS01d07deb=01023105913e8e4ceef676b57026510347afb05914f43aa80348881ccac1cf04638ded358a7b30872a703411213b6a915d9f6b74874a6c3cff59ff3f3cdaeaae3ffd38340c45fb8f4e9756855a0a5c2a5e37af58f1; Digikala:General:Location=MTJ1R0dYZzJRMk1tdUJ3L2FnVVhlQT09%26YnNESDZEYUVHM25UekpndDJzQjdESUlDZ21hMmdsTUtnaEFxb1hJUFdkcUlGRFczS0crdThpSTF4YStad09OM2FLVzFoZ1RVZ3ZSV01Oa2NFYTF0WWc9PQ~~; PHPSESSID=95k51m1qo3omq2bs6jdj8jqdnv; tracker_session=2uMd2AI; TS01c77ebf=0102310591fc8c719bd280ffd5400b21cf26c5b0f37ab717e5ffd9eafda66fcae55818d7afaef4bbb60b905d20adbe0624a300cdce393cebf6261821663367a70fea0a233f3e312969f1699279ef38214d36039576dfab1734ac929d0a52832d5464352808846ac00387d18d2dfaba66c0fa6f0ba7b3a813bfd070cdc74beab721510361839c740371a033d5f7a2f888adcbe35aa17dcd6237639b13303e1d8d3016caa58d7a91cb884e0f7e0dfd3dd62a1596f4eca79cedf09bb0436d67e9d1b65c1c7a36cac4867a8f65ddfc2d6a6a382569b68e; _sp_ses.13cb=*; TS010e7d7f=0102310591e602c2e4555399a6a861300a70336ba19539f0b4ce1d0aba8f74296f975ed3a995059884debc1016402b29a25b5b65810bb9626ec9c4348ce5bfc37321cc400ee63fcd46f4ea3a1b18ca7b8fea0ce4510038e3434205ea0c46f704a4ce80a6e467d55ab507864006f0c4af8786348cdabdd2564e22f8732c671baa1412adc0adfedf16cfed8e5cad04e8a08aa8bcee3e6dc24e3b56227eaf486faaf4b8e60d46; _sp_id.13cb=8c6cbf06-dbf0-4fbd-93da-3d6958b9abb6.1746167668.5.1746188810.1746184520.9f16a218-c1ba-4bb5-9668-92c3c04cfe38.bb6f8301-294a-47dd-b16a-da3e369bba83.6282448a-e4bc-44a0-bfa9-8ad47493ed4b.1746186542736.26"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backUrl\": \"/\",\r\n    \"type\": \"password\",\r\n    \"username\": \"invalid\",\r\n    \"password\": \"@Alireza0014621827\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/user/login/password/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"login",
+								"password",
+								""
+							]
+						},
+						"description": "Generated from cURL: curl 'https://api.digikala.com/v1/user/login/password/' \\\r\n  -H 'accept: application/json, text/plain, */*' \\\r\n  -H 'accept-language: en,fa;q=0.9' \\\r\n  -H 'cache-control: no-cache' \\\r\n  -H 'content-type: application/json' \\\r\n  -b 'ab_test_experiments=%5B%22229ea1a233356b114984cf9fa2ecd3ff%22%2C%22db7b11075496e04f0a6ef0d3a02d5264%22%2C%224905b18f64695e6dbfd739d20a4ae2c0%22%2C%22f0fd80107233fa604679779d7e121710%22%2C%2237136fdc21e0b782211ccac8c2d7be63%22%5D; tracker_glob_new=8bOT0xT; TS01b6ea4d=0102310591b7d4ed63f1acd75f8588e18a9dfea48e03363acc34da2fbb748fcd30f01dcea9bc4e4deda3fbce5ad444e41f7739fd4277606a8ec468f424d19aa27cc547768ab0b4a801f21e2c3ffc44f89e3d173045c1f81b92ece38f023fe4bf7f2646c341d6b22210bb922d44ce221fb7ad7f91d1; TS011434b1=010231059126488f5b2f431971401bc4a17cf26aebee2c5b1c420c96cc797a9240cca237425b0b4c1e2d9dfe6e0423cecc7193b01d625c486831d691e4f4380de0ca7f1d3ddfa848de95e9f66b97cfcc6f25e8e606ff304aa8c29562b6f8052497828342d2c3dba1cfc841b68c9f02b0e977f160b8d3ba132779020749babd07d453464e622c6103f3e7640a66e6d1c3140a039022db3614cfd7ff8a40401a7ffdb7f511d0; TS01d07deb=01023105913e8e4ceef676b57026510347afb05914f43aa80348881ccac1cf04638ded358a7b30872a703411213b6a915d9f6b74874a6c3cff59ff3f3cdaeaae3ffd38340c45fb8f4e9756855a0a5c2a5e37af58f1; Digikala:General:Location=MTJ1R0dYZzJRMk1tdUJ3L2FnVVhlQT09%26YnNESDZEYUVHM25UekpndDJzQjdESUlDZ21hMmdsTUtnaEFxb1hJUFdkcUlGRFczS0crdThpSTF4YStad09OM2FLVzFoZ1RVZ3ZSV01Oa2NFYTF0WWc9PQ~~; PHPSESSID=95k51m1qo3omq2bs6jdj8jqdnv; tracker_session=2uMd2AI; TS01c77ebf=0102310591fc8c719bd280ffd5400b21cf26c5b0f37ab717e5ffd9eafda66fcae55818d7afaef4bbb60b905d20adbe0624a300cdce393cebf6261821663367a70fea0a233f3e312969f1699279ef38214d36039576dfab1734ac929d0a52832d5464352808846ac00387d18d2dfaba66c0fa6f0ba7b3a813bfd070cdc74beab721510361839c740371a033d5f7a2f888adcbe35aa17dcd6237639b13303e1d8d3016caa58d7a91cb884e0f7e0dfd3dd62a1596f4eca79cedf09bb0436d67e9d1b65c1c7a36cac4867a8f65ddfc2d6a6a382569b68e; _sp_ses.13cb=*; TS010e7d7f=0102310591e602c2e4555399a6a861300a70336ba19539f0b4ce1d0aba8f74296f975ed3a995059884debc1016402b29a25b5b65810bb9626ec9c4348ce5bfc37321cc400ee63fcd46f4ea3a1b18ca7b8fea0ce4510038e3434205ea0c46f704a4ce80a6e467d55ab507864006f0c4af8786348cdabdd2564e22f8732c671baa1412adc0adfedf16cfed8e5cad04e8a08aa8bcee3e6dc24e3b56227eaf486faaf4b8e60d46; _sp_id.13cb=8c6cbf06-dbf0-4fbd-93da-3d6958b9abb6.1746167668.5.1746188810.1746184520.9f16a218-c1ba-4bb5-9668-92c3c04cfe38.bb6f8301-294a-47dd-b16a-da3e369bba83.6282448a-e4bc-44a0-bfa9-8ad47493ed4b.1746186542736.26' \\\r\n  -H 'origin: https://www.digikala.com' \\\r\n  -H 'pragma: no-cache' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://www.digikala.com/' \\\r\n  -H 'sec-ch-ua: \"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A/Brand\";v=\"99\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-site' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36' \\\r\n  -H 'x-web-client: desktop' \\\r\n  -H 'x-web-optimize-response: 1' \\\r\n  --data-raw '{\"backUrl\":\"/\",\"type\":\"password\",\"username\":\"09128130622\",\"password\":\"@Alireza0014621827\"}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Empty Username Test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body should contain status 400\", function () {\r",
+									"    pm.response.to.have.jsonBody('status', 400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body should contain message \", function () {\r",
+									"    pm.response.to.have.jsonBody('message', \"شماره موبایل یا ایمیل نادرست است\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"status should be of type number\", function () {\r",
+									"    pm.expect(pm.response.json().status).to.be.a('number');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body should contain status field\", function () {\r",
+									"    pm.response.to.have.jsonBody('status');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time should be less than 2000ms\", function () {\r",
+									"    pm.response.to.have.responseTime.lessThan(2000);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en,fa;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://www.digikala.com"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://www.digikala.com/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A/Brand\";v=\"99\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-web-client",
+								"value": "desktop"
+							},
+							{
+								"key": "x-web-optimize-response",
+								"value": "1"
+							},
+							{
+								"key": "Cookie",
+								"value": "ab_test_experiments=%5B%22229ea1a233356b114984cf9fa2ecd3ff%22%2C%22db7b11075496e04f0a6ef0d3a02d5264%22%2C%224905b18f64695e6dbfd739d20a4ae2c0%22%2C%22f0fd80107233fa604679779d7e121710%22%2C%2237136fdc21e0b782211ccac8c2d7be63%22%5D; tracker_glob_new=8bOT0xT; TS01b6ea4d=0102310591b7d4ed63f1acd75f8588e18a9dfea48e03363acc34da2fbb748fcd30f01dcea9bc4e4deda3fbce5ad444e41f7739fd4277606a8ec468f424d19aa27cc547768ab0b4a801f21e2c3ffc44f89e3d173045c1f81b92ece38f023fe4bf7f2646c341d6b22210bb922d44ce221fb7ad7f91d1; TS011434b1=010231059126488f5b2f431971401bc4a17cf26aebee2c5b1c420c96cc797a9240cca237425b0b4c1e2d9dfe6e0423cecc7193b01d625c486831d691e4f4380de0ca7f1d3ddfa848de95e9f66b97cfcc6f25e8e606ff304aa8c29562b6f8052497828342d2c3dba1cfc841b68c9f02b0e977f160b8d3ba132779020749babd07d453464e622c6103f3e7640a66e6d1c3140a039022db3614cfd7ff8a40401a7ffdb7f511d0; TS01d07deb=01023105913e8e4ceef676b57026510347afb05914f43aa80348881ccac1cf04638ded358a7b30872a703411213b6a915d9f6b74874a6c3cff59ff3f3cdaeaae3ffd38340c45fb8f4e9756855a0a5c2a5e37af58f1; Digikala:General:Location=MTJ1R0dYZzJRMk1tdUJ3L2FnVVhlQT09%26YnNESDZEYUVHM25UekpndDJzQjdESUlDZ21hMmdsTUtnaEFxb1hJUFdkcUlGRFczS0crdThpSTF4YStad09OM2FLVzFoZ1RVZ3ZSV01Oa2NFYTF0WWc9PQ~~; PHPSESSID=95k51m1qo3omq2bs6jdj8jqdnv; tracker_session=2uMd2AI; TS01c77ebf=0102310591fc8c719bd280ffd5400b21cf26c5b0f37ab717e5ffd9eafda66fcae55818d7afaef4bbb60b905d20adbe0624a300cdce393cebf6261821663367a70fea0a233f3e312969f1699279ef38214d36039576dfab1734ac929d0a52832d5464352808846ac00387d18d2dfaba66c0fa6f0ba7b3a813bfd070cdc74beab721510361839c740371a033d5f7a2f888adcbe35aa17dcd6237639b13303e1d8d3016caa58d7a91cb884e0f7e0dfd3dd62a1596f4eca79cedf09bb0436d67e9d1b65c1c7a36cac4867a8f65ddfc2d6a6a382569b68e; _sp_ses.13cb=*; TS010e7d7f=0102310591e602c2e4555399a6a861300a70336ba19539f0b4ce1d0aba8f74296f975ed3a995059884debc1016402b29a25b5b65810bb9626ec9c4348ce5bfc37321cc400ee63fcd46f4ea3a1b18ca7b8fea0ce4510038e3434205ea0c46f704a4ce80a6e467d55ab507864006f0c4af8786348cdabdd2564e22f8732c671baa1412adc0adfedf16cfed8e5cad04e8a08aa8bcee3e6dc24e3b56227eaf486faaf4b8e60d46; _sp_id.13cb=8c6cbf06-dbf0-4fbd-93da-3d6958b9abb6.1746167668.5.1746188810.1746184520.9f16a218-c1ba-4bb5-9668-92c3c04cfe38.bb6f8301-294a-47dd-b16a-da3e369bba83.6282448a-e4bc-44a0-bfa9-8ad47493ed4b.1746186542736.26"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backUrl\": \"/\",\r\n    \"type\": \"password\",\r\n    \"username\": null,\r\n    \"password\": \"@Alireza0014621827\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/user/login/password/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"login",
+								"password",
+								""
+							]
+						},
+						"description": "Generated from cURL: curl 'https://api.digikala.com/v1/user/login/password/' \\\r\n  -H 'accept: application/json, text/plain, */*' \\\r\n  -H 'accept-language: en,fa;q=0.9' \\\r\n  -H 'cache-control: no-cache' \\\r\n  -H 'content-type: application/json' \\\r\n  -b 'ab_test_experiments=%5B%22229ea1a233356b114984cf9fa2ecd3ff%22%2C%22db7b11075496e04f0a6ef0d3a02d5264%22%2C%224905b18f64695e6dbfd739d20a4ae2c0%22%2C%22f0fd80107233fa604679779d7e121710%22%2C%2237136fdc21e0b782211ccac8c2d7be63%22%5D; tracker_glob_new=8bOT0xT; TS01b6ea4d=0102310591b7d4ed63f1acd75f8588e18a9dfea48e03363acc34da2fbb748fcd30f01dcea9bc4e4deda3fbce5ad444e41f7739fd4277606a8ec468f424d19aa27cc547768ab0b4a801f21e2c3ffc44f89e3d173045c1f81b92ece38f023fe4bf7f2646c341d6b22210bb922d44ce221fb7ad7f91d1; TS011434b1=010231059126488f5b2f431971401bc4a17cf26aebee2c5b1c420c96cc797a9240cca237425b0b4c1e2d9dfe6e0423cecc7193b01d625c486831d691e4f4380de0ca7f1d3ddfa848de95e9f66b97cfcc6f25e8e606ff304aa8c29562b6f8052497828342d2c3dba1cfc841b68c9f02b0e977f160b8d3ba132779020749babd07d453464e622c6103f3e7640a66e6d1c3140a039022db3614cfd7ff8a40401a7ffdb7f511d0; TS01d07deb=01023105913e8e4ceef676b57026510347afb05914f43aa80348881ccac1cf04638ded358a7b30872a703411213b6a915d9f6b74874a6c3cff59ff3f3cdaeaae3ffd38340c45fb8f4e9756855a0a5c2a5e37af58f1; Digikala:General:Location=MTJ1R0dYZzJRMk1tdUJ3L2FnVVhlQT09%26YnNESDZEYUVHM25UekpndDJzQjdESUlDZ21hMmdsTUtnaEFxb1hJUFdkcUlGRFczS0crdThpSTF4YStad09OM2FLVzFoZ1RVZ3ZSV01Oa2NFYTF0WWc9PQ~~; PHPSESSID=95k51m1qo3omq2bs6jdj8jqdnv; tracker_session=2uMd2AI; TS01c77ebf=0102310591fc8c719bd280ffd5400b21cf26c5b0f37ab717e5ffd9eafda66fcae55818d7afaef4bbb60b905d20adbe0624a300cdce393cebf6261821663367a70fea0a233f3e312969f1699279ef38214d36039576dfab1734ac929d0a52832d5464352808846ac00387d18d2dfaba66c0fa6f0ba7b3a813bfd070cdc74beab721510361839c740371a033d5f7a2f888adcbe35aa17dcd6237639b13303e1d8d3016caa58d7a91cb884e0f7e0dfd3dd62a1596f4eca79cedf09bb0436d67e9d1b65c1c7a36cac4867a8f65ddfc2d6a6a382569b68e; _sp_ses.13cb=*; TS010e7d7f=0102310591e602c2e4555399a6a861300a70336ba19539f0b4ce1d0aba8f74296f975ed3a995059884debc1016402b29a25b5b65810bb9626ec9c4348ce5bfc37321cc400ee63fcd46f4ea3a1b18ca7b8fea0ce4510038e3434205ea0c46f704a4ce80a6e467d55ab507864006f0c4af8786348cdabdd2564e22f8732c671baa1412adc0adfedf16cfed8e5cad04e8a08aa8bcee3e6dc24e3b56227eaf486faaf4b8e60d46; _sp_id.13cb=8c6cbf06-dbf0-4fbd-93da-3d6958b9abb6.1746167668.5.1746188810.1746184520.9f16a218-c1ba-4bb5-9668-92c3c04cfe38.bb6f8301-294a-47dd-b16a-da3e369bba83.6282448a-e4bc-44a0-bfa9-8ad47493ed4b.1746186542736.26' \\\r\n  -H 'origin: https://www.digikala.com' \\\r\n  -H 'pragma: no-cache' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://www.digikala.com/' \\\r\n  -H 'sec-ch-ua: \"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A/Brand\";v=\"99\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-site' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36' \\\r\n  -H 'x-web-client: desktop' \\\r\n  -H 'x-web-optimize-response: 1' \\\r\n  --data-raw '{\"backUrl\":\"/\",\"type\":\"password\",\"username\":\"09128130622\",\"password\":\"@Alireza0014621827\"}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Empty Password Test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body should contain status 400\", function () {\r",
+									"    pm.response.to.have.jsonBody('status', 400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body should contain message \", function () {\r",
+									"    pm.response.to.have.jsonBody('message', \"شماره موبایل یا ایمیل نادرست است\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"status should be of type number\", function () {\r",
+									"    pm.expect(pm.response.json().status).to.be.a('number');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body should contain status field\", function () {\r",
+									"    pm.response.to.have.jsonBody('status');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time should be less than 2000ms\", function () {\r",
+									"    pm.response.to.have.responseTime.lessThan(2000);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en,fa;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://www.digikala.com"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://www.digikala.com/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A/Brand\";v=\"99\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-web-client",
+								"value": "desktop"
+							},
+							{
+								"key": "x-web-optimize-response",
+								"value": "1"
+							},
+							{
+								"key": "Cookie",
+								"value": "ab_test_experiments=%5B%22229ea1a233356b114984cf9fa2ecd3ff%22%2C%22db7b11075496e04f0a6ef0d3a02d5264%22%2C%224905b18f64695e6dbfd739d20a4ae2c0%22%2C%22f0fd80107233fa604679779d7e121710%22%2C%2237136fdc21e0b782211ccac8c2d7be63%22%5D; tracker_glob_new=8bOT0xT; TS01b6ea4d=0102310591b7d4ed63f1acd75f8588e18a9dfea48e03363acc34da2fbb748fcd30f01dcea9bc4e4deda3fbce5ad444e41f7739fd4277606a8ec468f424d19aa27cc547768ab0b4a801f21e2c3ffc44f89e3d173045c1f81b92ece38f023fe4bf7f2646c341d6b22210bb922d44ce221fb7ad7f91d1; TS011434b1=010231059126488f5b2f431971401bc4a17cf26aebee2c5b1c420c96cc797a9240cca237425b0b4c1e2d9dfe6e0423cecc7193b01d625c486831d691e4f4380de0ca7f1d3ddfa848de95e9f66b97cfcc6f25e8e606ff304aa8c29562b6f8052497828342d2c3dba1cfc841b68c9f02b0e977f160b8d3ba132779020749babd07d453464e622c6103f3e7640a66e6d1c3140a039022db3614cfd7ff8a40401a7ffdb7f511d0; TS01d07deb=01023105913e8e4ceef676b57026510347afb05914f43aa80348881ccac1cf04638ded358a7b30872a703411213b6a915d9f6b74874a6c3cff59ff3f3cdaeaae3ffd38340c45fb8f4e9756855a0a5c2a5e37af58f1; Digikala:General:Location=MTJ1R0dYZzJRMk1tdUJ3L2FnVVhlQT09%26YnNESDZEYUVHM25UekpndDJzQjdESUlDZ21hMmdsTUtnaEFxb1hJUFdkcUlGRFczS0crdThpSTF4YStad09OM2FLVzFoZ1RVZ3ZSV01Oa2NFYTF0WWc9PQ~~; PHPSESSID=95k51m1qo3omq2bs6jdj8jqdnv; tracker_session=2uMd2AI; TS01c77ebf=0102310591fc8c719bd280ffd5400b21cf26c5b0f37ab717e5ffd9eafda66fcae55818d7afaef4bbb60b905d20adbe0624a300cdce393cebf6261821663367a70fea0a233f3e312969f1699279ef38214d36039576dfab1734ac929d0a52832d5464352808846ac00387d18d2dfaba66c0fa6f0ba7b3a813bfd070cdc74beab721510361839c740371a033d5f7a2f888adcbe35aa17dcd6237639b13303e1d8d3016caa58d7a91cb884e0f7e0dfd3dd62a1596f4eca79cedf09bb0436d67e9d1b65c1c7a36cac4867a8f65ddfc2d6a6a382569b68e; _sp_ses.13cb=*; TS010e7d7f=0102310591e602c2e4555399a6a861300a70336ba19539f0b4ce1d0aba8f74296f975ed3a995059884debc1016402b29a25b5b65810bb9626ec9c4348ce5bfc37321cc400ee63fcd46f4ea3a1b18ca7b8fea0ce4510038e3434205ea0c46f704a4ce80a6e467d55ab507864006f0c4af8786348cdabdd2564e22f8732c671baa1412adc0adfedf16cfed8e5cad04e8a08aa8bcee3e6dc24e3b56227eaf486faaf4b8e60d46; _sp_id.13cb=8c6cbf06-dbf0-4fbd-93da-3d6958b9abb6.1746167668.5.1746188810.1746184520.9f16a218-c1ba-4bb5-9668-92c3c04cfe38.bb6f8301-294a-47dd-b16a-da3e369bba83.6282448a-e4bc-44a0-bfa9-8ad47493ed4b.1746186542736.26"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backUrl\": \"/\",\r\n    \"type\": \"password\",\r\n    \"username\": \"09128130622\",\r\n    \"password\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/user/login/password/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"login",
+								"password",
+								""
+							]
+						},
+						"description": "Generated from cURL: curl 'https://api.digikala.com/v1/user/login/password/' \\\r\n  -H 'accept: application/json, text/plain, */*' \\\r\n  -H 'accept-language: en,fa;q=0.9' \\\r\n  -H 'cache-control: no-cache' \\\r\n  -H 'content-type: application/json' \\\r\n  -b 'ab_test_experiments=%5B%22229ea1a233356b114984cf9fa2ecd3ff%22%2C%22db7b11075496e04f0a6ef0d3a02d5264%22%2C%224905b18f64695e6dbfd739d20a4ae2c0%22%2C%22f0fd80107233fa604679779d7e121710%22%2C%2237136fdc21e0b782211ccac8c2d7be63%22%5D; tracker_glob_new=8bOT0xT; TS01b6ea4d=0102310591b7d4ed63f1acd75f8588e18a9dfea48e03363acc34da2fbb748fcd30f01dcea9bc4e4deda3fbce5ad444e41f7739fd4277606a8ec468f424d19aa27cc547768ab0b4a801f21e2c3ffc44f89e3d173045c1f81b92ece38f023fe4bf7f2646c341d6b22210bb922d44ce221fb7ad7f91d1; TS011434b1=010231059126488f5b2f431971401bc4a17cf26aebee2c5b1c420c96cc797a9240cca237425b0b4c1e2d9dfe6e0423cecc7193b01d625c486831d691e4f4380de0ca7f1d3ddfa848de95e9f66b97cfcc6f25e8e606ff304aa8c29562b6f8052497828342d2c3dba1cfc841b68c9f02b0e977f160b8d3ba132779020749babd07d453464e622c6103f3e7640a66e6d1c3140a039022db3614cfd7ff8a40401a7ffdb7f511d0; TS01d07deb=01023105913e8e4ceef676b57026510347afb05914f43aa80348881ccac1cf04638ded358a7b30872a703411213b6a915d9f6b74874a6c3cff59ff3f3cdaeaae3ffd38340c45fb8f4e9756855a0a5c2a5e37af58f1; Digikala:General:Location=MTJ1R0dYZzJRMk1tdUJ3L2FnVVhlQT09%26YnNESDZEYUVHM25UekpndDJzQjdESUlDZ21hMmdsTUtnaEFxb1hJUFdkcUlGRFczS0crdThpSTF4YStad09OM2FLVzFoZ1RVZ3ZSV01Oa2NFYTF0WWc9PQ~~; PHPSESSID=95k51m1qo3omq2bs6jdj8jqdnv; tracker_session=2uMd2AI; TS01c77ebf=0102310591fc8c719bd280ffd5400b21cf26c5b0f37ab717e5ffd9eafda66fcae55818d7afaef4bbb60b905d20adbe0624a300cdce393cebf6261821663367a70fea0a233f3e312969f1699279ef38214d36039576dfab1734ac929d0a52832d5464352808846ac00387d18d2dfaba66c0fa6f0ba7b3a813bfd070cdc74beab721510361839c740371a033d5f7a2f888adcbe35aa17dcd6237639b13303e1d8d3016caa58d7a91cb884e0f7e0dfd3dd62a1596f4eca79cedf09bb0436d67e9d1b65c1c7a36cac4867a8f65ddfc2d6a6a382569b68e; _sp_ses.13cb=*; TS010e7d7f=0102310591e602c2e4555399a6a861300a70336ba19539f0b4ce1d0aba8f74296f975ed3a995059884debc1016402b29a25b5b65810bb9626ec9c4348ce5bfc37321cc400ee63fcd46f4ea3a1b18ca7b8fea0ce4510038e3434205ea0c46f704a4ce80a6e467d55ab507864006f0c4af8786348cdabdd2564e22f8732c671baa1412adc0adfedf16cfed8e5cad04e8a08aa8bcee3e6dc24e3b56227eaf486faaf4b8e60d46; _sp_id.13cb=8c6cbf06-dbf0-4fbd-93da-3d6958b9abb6.1746167668.5.1746188810.1746184520.9f16a218-c1ba-4bb5-9668-92c3c04cfe38.bb6f8301-294a-47dd-b16a-da3e369bba83.6282448a-e4bc-44a0-bfa9-8ad47493ed4b.1746186542736.26' \\\r\n  -H 'origin: https://www.digikala.com' \\\r\n  -H 'pragma: no-cache' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://www.digikala.com/' \\\r\n  -H 'sec-ch-ua: \"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A/Brand\";v=\"99\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-site' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36' \\\r\n  -H 'x-web-client: desktop' \\\r\n  -H 'x-web-optimize-response: 1' \\\r\n  --data-raw '{\"backUrl\":\"/\",\"type\":\"password\",\"username\":\"09128130622\",\"password\":\"@Alireza0014621827\"}'"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://api.digikala.com",
+			"type": "default"
+		}
+	]
+}
